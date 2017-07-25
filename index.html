@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Pomocnik dietetyczny</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        
+        .calc-container {
+            padding: 40px 15px;
+        }
+        
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak {
+            display: none !important;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container" ng-controller="CalcCtrl">
+        <div class="row">
+            <div class="calc-container">
+                <h1>Pomocnik dietetyczny</h1>
+                <form>
+                   <div class="form-group">
+                    <label for="a">Wiek:</label><input type="number" name="a" ng-model="a" class="form-control" id="a"><br>
+                    </div>
+                    <div class="form-group">
+                    Kobieta: <input type="radio" name="s" value="K" id="sk">
+                    Mężczyzna: <input type="radio" name="s" value="M" id="sm"><br>
+                    </div>
+                    <div class="form-group">
+                    Waga: <input type="number" name="w" placeholder="Twoja waga" ng-model="w" class="form-control"><br>
+                    </div>
+                    <div class="form-group">
+                    Twój wzrost: <input type="number" name="h" placeholder="Twój wzrost" ng-model="h" class="form-control"><br>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-default" ng-click="calculate()">Sprawdź</button>
+                </form>
+                <h2>Kalorie Twojej przemiany materii</h2>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>PPM</th>
+                            <th>CPM</th>
+                            <th>Redukcja</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ppm}}</td>
+                            <td>{{cpm}}</td>
+                            <td>{{reduction}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Makroelementy</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Białko</th>
+                            <th colspan="2">Tłuszcze</th>
+                            <th colspan="2">Węglowodany</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{bg}}g</td>
+                            <td>{{bc}}kcal</td>
+                            <td>{{tg}}g</td>
+                            <td>{{tc}}kcal</td>
+                            <td>{{wg}}g</td>
+                            <td>{{wc}}kcal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
